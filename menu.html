@@ -1,0 +1,391 @@
+<html>
+<head>
+<title>Sigma Phi Epsilon - University of Michigan</title>
+<script LANGUAGE="JavaScript">
+<!--
+
+  document.onmouseover = doDocumentOnMouseOver ;
+  document.onmouseout = doDocumentOnMouseOut ;
+
+  function doDocumentOnMouseOver() {
+    var eSrc = window.event.srcElement ;
+    if (eSrc.className == "item") {
+      window.event.srcElement.className = "highlight"; // change class
+    }
+  }
+
+  function doDocumentOnMouseOut() {
+    var eSrc = window.event.srcElement ;
+    if (eSrc.className == "highlight") {
+      window.event.srcElement.className = "item"; // change class
+    }
+  }
+
+
+var bV=parseInt(navigator.appVersion);
+NS4=(document.layers) ? true : false;
+IE4=((document.all)&&(bV>=4))?true:false;
+ver4 = (NS4 || IE4) ? true : false;
+
+function expandIt(){return}
+function expandAll(){return}
+//-->
+
+
+<!--
+isExpanded = false;
+
+function getIndex(el) {
+	ind = null;
+	for (i=0; i<document.layers.length; i++) {
+		whichEl = document.layers[i];
+		if (whichEl.id == el) {
+			ind = i;
+			break;
+		}
+	}
+	return ind;
+}
+
+function arrange() {
+	nextY = document.layers[firstInd].pageY + document.layers[firstInd].document.height;
+	for (i=firstInd+1; i<document.layers.length; i++) {
+		whichEl = document.layers[i];
+		if (whichEl.visibility != "hide") {
+			whichEl.pageY = nextY;
+			nextY += whichEl.document.height;
+		}
+	}
+}
+
+function initIt(){
+	if (NS4) {
+		for (i=0; i<document.layers.length; i++) {
+			whichEl = document.layers[i];
+			if (whichEl.id.indexOf("Child") != -1) whichEl.visibility = "hide";
+		}
+		arrange();
+	}
+	else {
+		tempColl = document.all.tags("DIV");
+		for (i=0; i<tempColl.length; i++) {
+			if (tempColl(i).className == "child") tempColl(i).style.display = "none";
+		}
+	}
+}
+
+function expandIt(el) {
+	if (!ver4) return;
+	if (IE4) {expandIE(el)} else {expandNS(el)}
+}
+
+function expandIE(el) { 
+	whichEl = eval(el + "Child");
+	whichIm = event.srcElement;
+
+	if (whichEl.style.display == "none") {
+		whichEl.style.display = "block";
+		whichIm.src = "minus.gif";		
+	}
+	else {
+		whichEl.style.display = "none";
+		whichIm.src = "plus.gif";
+	}
+    window.event.cancelBubble = true ;
+}
+
+function expandNS(el) {
+	whichEl = eval("document." + el + "Child");
+	whichIm = eval("document." + el + "Parent.document.images['imEx']");
+	if (whichEl.visibility == "hide") {
+		whichEl.visibility = "show";
+		whichIm.src = "minus.gif";
+	}
+	else {
+		whichEl.visibility = "hide";
+		whichIm.src = "plus.gif";
+	}
+	arrange();
+}
+
+function showAll() {
+	for (i=firstInd; i<document.layers.length; i++) {
+		whichEl = document.layers[i];
+		whichEl.visibility = "show";
+	}
+}
+
+function expandAll(isBot) {
+	newSrc = (isExpanded) ? "minus.gif" : "plus.gif";
+
+	if (NS4) {
+        document.images["imEx"].src = newSrc;
+		for (i=firstInd; i<document.layers.length; i++) {
+			whichEl = document.layers[i];
+			if (whichEl.id.indexOf("Parent") != -1) {
+				whichEl.document.images["imEx"].src = newSrc;
+			}
+			if (whichEl.id.indexOf("Child") != -1) {
+				whichEl.visibility = (isExpanded) ? "hide" : "show";
+			}
+		}
+
+		arrange();
+		if (isBot && isExpanded) scrollTo(0,document.layers[firstInd].pageY);
+	}
+	else {
+		divColl = document.all.tags("DIV");
+		for (i=0; i<divColl.length; i++) {
+			if (divColl(i).className == "child") {
+				divColl(i).style.display = (isExpanded) ? "none" : "block";
+			}
+		}
+		imColl = document.images.item("imEx");
+		for (i=0; i<imColl.length; i++) {
+			imColl(i).src = newSrc;
+		}
+	}
+
+	isExpanded = !isExpanded;
+}
+
+with (document) {
+	write("<STYLE TYPE='text/css'>");
+	if (NS4) {
+		write(".parent {font-size:9pt; line-height:10pt; color: blue; text-decoration:none; margin-top: 5px; margin-bottom: 5px; position:absolute; visibility:hidden; color: white;}");
+		write(".child {text-decoration:none; font-size:9pt; line-height:10pt; position:absolute}");
+	        write(".item {color: white; text-decoration:none;}");
+		write(".regular {position:absolute; visibility:hidden}");
+	        write("DIV {color: blue; }")
+	}
+	else {
+		write(".child {font:12px/13px Times; display:none}");
+		write(".parent {font:12px/13px Times; color: white; font-weight:bold; text-decoration:none; margin-top: 5px; margin-bottom: 5px; color: white;}");
+	        write(".item { color: white; text-decoration:none;}");
+	        write(".highlight { color: white; }");
+	        write(".heada { font: 12px/13px; Times}");
+	        write("DIV { color: white; }")
+	}
+	write("</STYLE>");
+}
+
+onload = initIt;
+
+//-->
+</script>
+
+<style type="text/css">
+<!--
+A:link    {text-decoration: none}
+A:visited {text-decoration: none}
+A:active  {color: yellow; font-weight: bold; text-decoration: none}
+A:hover   {color: white; font-weight: bold; text-decoration: none}
+-->
+</style>
+
+<BASE TARGET="content">
+
+</head>
+
+<body topmargin="11" leftmargin="15" marginwidth="15" marginheight="11">
+<font color="#000000">
+
+<A HREF="main.html"><IMG SRC="sigep.gif" BORDER=0  ALIGN="middle" ALT="Home"></A><BR>
+
+<font FACE="arial" color="white" size="-2">Click the logo to go home</font><BR>
+
+&nbsp;</font>
+<div ID="elOneParent" CLASS="parent">
+<a href="#" class="item" onClick="expandIt('elOne'); return false">
+<font color="#000000">
+<img NAME="imEx" SRC="../sigmape/plus.gif" BORDER="0" ALT="Information" width="9" height="9">
+<font FACE="arial" color="white" size="-2" class="heada">Information</font></font></a>
+</div>
+<div ID="elOneChild" CLASS="child">
+<font FACE="arial" color="#000000" size="-2" class="heada">
+           &nbsp;&nbsp; 
+           <a class="item" HREF="calender.html">Calendar</a><br>
+
+</FONT>
+</div>
+
+<div ID="elDrawParent" CLASS="parent">
+<a href="#" class="item" onClick="expandIt('elDraw'); return false">
+<font color="#000000">
+<img NAME="imEx" SRC="../sigmape/plus.gif" BORDER="0" ALT="Brothers" width="9" height="9">
+<FONT FACE="arial" color="white" class="heada" size="2">Brothers</font></font></a>
+</div>
+<div ID="elDrawChild" CLASS="child">
+<font FACE="arial" color="#000000" size="-2" class="heada">
+           &nbsp;&nbsp; 
+           <a class="item" HREF="broindex.html">Brother Index</a><br>
+           &nbsp;&nbsp; 
+           <a class="item" HREF="eboard.html">Executive Board</a><br>
+           &nbsp;&nbsp; 
+           <a class="item" HREF="chairs.html">Cabinets/Chairmen</a><br>
+           &nbsp;&nbsp; 
+           <a class="item" HREF="alumni.html">Alumni</a><br>                 
+</FONT>
+</div>
+
+<div ID="elStandParent" CLASS="parent">
+<a href="#" class="item" onClick="expandIt('elStand'); return false">
+<font color="#000000">
+<img NAME="imEx" SRC="../sigmape/plus.gif" BORDER="0" ALT="Standards" width="9" height="9">
+<FONT FACE="arial" color="white" class="heada" size="2">Standards</font></font></a>
+</div>
+<div ID="elStandChild" CLASS="child">
+<font FACE="arial" color="#000000" size="-2" class="heada">
+           &nbsp;&nbsp; 
+           <a class="item" HREF="standards.html">Chapter Standards</a><br>           
+	   &nbsp;&nbsp; 
+           <a class="item" HREF="attend.html">Attendance Policy</a><br>
+	   &nbsp;&nbsp; 
+           <a class="item" HREF="bylaws.html">Bylaws</a><br>	   
+	   &nbsp;&nbsp; 
+           <a class="item" HREF="points.html">Points</a><br>
+
+</FONT>
+</div>
+
+<div ID="elTwoParent" CLASS="parent">
+<a class="item" HREF="#" onClick="expandIt('elTwo'); return false">
+<font color="#000000">
+<img NAME="imEx" SRC="../sigmape/plus.gif" BORDER="0" ALT="The Fraternity" width="9" height="9">
+<FONT FACE="arial" color="white" class="heada" size="2">The Fraternity</font></font></a>
+</div>
+<div ID="elTwoChild" CLASS="child">
+<font FACE="arial" color="#000000" size="-2" class="heada">
+           &nbsp;&nbsp; 
+           <a class="item" HREF="creed.html">SigEp Creed</a><br>
+           &nbsp;&nbsp; 
+           <a class="item" HREF="man.html">The Balanced Man</a><br>
+</FONT>
+</div>
+
+<div ID="elThreeParent" CLASS="parent">
+<a class="item" HREF="#" onClick="expandIt('elThree'); return false">
+<font color="#000000">
+<img NAME="imEx" SRC="../sigmape/plus.gif" BORDER="0" ALT="Pictures" width="9" height="9">
+<FONT FACE="arial" color="white" class="heada" size="2">Pictures</font></font></a>
+</div>
+<div ID="elThreeChild" CLASS="child">
+<font FACE="arial" color="#000000" size="-2" class="heada">
+           
+           &nbsp;&nbsp; 
+           <a class="item" HREF="newspaper.html">Newspaper</a><br>
+
+           &nbsp;&nbsp; 
+           <a class="item" HREF="events.html">Events</a><br>
+
+           &nbsp;&nbsp; 
+           <a class="item" HREF="random.html">Random</a><br>
+
+           &nbsp;&nbsp; 
+           <a class="item" HREF="composite.html">Composite</a><br>
+
+</FONT>
+</div>
+
+<div ID="elFourParent" CLASS="parent">
+<a class="item" HREF="#" onClick="expandIt('elFour'); return false">
+<font color="#000000">
+<img NAME="imEx" SRC="../sigmape/plus.gif" BORDER="0" ALT="Links" width="9" height="9">
+<FONT FACE="arial" color="white" class="heada" size="2">Links</font></font></a>
+</div>
+<div ID="elFourChild" CLASS="child">
+<font FACE="arial" color="#000000" size="-2" class="heada">
+	   &nbsp;&nbsp;
+           <a class="item" HREF="chapters.html">Campus Chapters</a><br>	   
+	   &nbsp;&nbsp;
+           <a class="item" HREF="mich.html">University Links</a><br>
+           &nbsp;&nbsp; 
+           <a class="item" HREF="other.html">Other SigEp Pages</a><br>
+	   &nbsp;&nbsp;
+           <a class="item" target="blank" HREF="http://www.sigep.org">National Home Page</a><br>
+
+</FONT>
+</div>
+
+<div ID="elFiveParent" CLASS="parent">
+<a class="item" HREF="#" onClick="expandIt('elFive'); return false">
+<font color="#000000">
+<img NAME="imEx" SRC="../sigmape/plus.gif" BORDER="0" ALT="Recruitment" width="9" height="9">
+<FONT FACE="arial" color="white" class="heada" size="2">Recruitment</font></font></a>
+</div>
+<div ID="elFiveChild" CLASS="child">
+<font FACE="arial" color="#000000" size="-2" class="heada">
+           &nbsp;&nbsp; 
+           <a class="item" HREF="app.html">Member Application</a><br>
+</FONT>
+</div>
+
+
+<script LANGUAGE="JavaScript1.2">
+<!--
+if (NS4) {
+	firstEl = "elOneParent";
+	firstInd = getIndex(firstEl);
+	showAll();
+	arrange();
+}
+//-->
+</script>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+            <TABLE border=0 cellPadding=5 cellSpacing=0 
+            width="120">
+              <TR>
+                <TD bgColor=#ffffff vAlign=top width="35%"><font color="#000000"><font face="Arial, Helvetica" size="-1"><b>Brother
+                  Resources<br>
+                  <br>
+                  <img border="0" src="images/brores.gif" width="66" height="45"><br>
+                  <br>
+                  <br>
+                  <br>
+                  </b></font><IMG alt="" height=2 
+                  src="../sigep%20[backup]/Community%20of%20Science_files/hairline.gif" width=107><BR><A 
+                  href="http://www.cos.com/whatsnew.shtml" 
+                  onmouseout="inact('srow1a')" onmouseover="act('srow1a')"><IMG 
+                  alt="New at COS" border=0 height=21 name=srow1a 
+                  src="../sigep%20[backup]/Community%20of%20Science_files/srow1an.gif" 
+                  width=145></A><BR><A href="http://www.cos.com/free.shtml" 
+                  onmouseout="inact('srow2a')" onmouseover="act('srow2a')"><IMG 
+                  alt="Free at COS" border=0 height=21 name=srow2a 
+                  src="../sigep%20[backup]/Community%20of%20Science_files/srow2an.gif" 
+                  width=145></A><BR><A href="http://www.cos.com/members.shtml" 
+                  onmouseout="inact('srow3a')" onmouseover="act('srow3a')"><IMG 
+                  alt=Membership border=0 height=21 name=srow3a 
+                  src="../sigep%20[backup]/Community%20of%20Science_files/srow3an.gif" 
+                  width=145></A><BR><IMG alt="" height=4 
+                  src="../sigep%20[backup]/Community%20of%20Science_files/hairline.gif" 
+                  width=113><BR><br>
+                  <FONT face=sans-serif size=-2><A 
+                  href="http://www.cos.com/products/amsdemo/demo.shtml">Find out 
+                  more!<br>
+                  </A> 
+            </FONT><BR></font><FONT face=sans-serif size=-2><font color="#000000">Going on 
+                  sabbatical? <IMG alt="" height=7 
+                  src="../sigep%20[backup]/Community%20of%20Science_files/triangle.gif" width=9><A 
+                  href="http://www.cos.com/cgi-bin/international/view/13/236">Check
+                  for research opportunities in the United Kingdom.</A> 
+                  </font> 
+                  <P><font color="#000000">Want to work with us on the development of our Abstract 
+                  Submission System for online collaboration and peer review? 
+                  <IMG alt="" height=7 
+                  src="../sigep%20[backup]/Community%20of%20Science_files/triangle.gif" width=9><A 
+                  href="http://www.cos.com/products/amsdemo/demo.shtml">Find out 
+                  more!</A> 
+                  </font> 
+                  <P><font color="#000000">COS Expertise contains researcher profiles from over 200 
+                  universities. <IMG alt="" height=7 
+                  src="../sigep%20[backup]/Community%20of%20Science_files/triangle.gif" width=9><A 
+                  href="http://www.cos.com/expertise.shtml">Who is conducting 
+                  research in your area?</A> 
+                  </font> 
+            </FONT></P></TD></TR></TABLE>
+
+</body>
+</html>

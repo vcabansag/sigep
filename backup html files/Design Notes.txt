@@ -1,0 +1,18 @@
+Splash Fonts:
+"Sigma Phi Epsilon" (Times, Roman, 35pts.)
+"IT TAKES A LITTLE MORE..." (Impact, Regular, 28pts., Leading 45, Tracking 50)
+
+MenuTop:
+Arial Narrow, Bold, 12pts, Tracking 10
+
+Thumbnails:
+Width: 120 px (1.667")
+Height: 90 px (1.25")
+Resolution: 72
+
+Pictures:
+Width: 480 px (6.667")
+Height: 360 px (5")
+Resolution: 72
+
+FOOTER: CG Omega Black 10 pt.
